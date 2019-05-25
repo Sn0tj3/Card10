@@ -1,0 +1,9 @@
+		{{ if ne .Page.GitInfo nil }}
+		<footer class="p-footer">
+			<span>{{.Lastmod}}</span>
+			<a href="{{.Site.Params.Wiki_URL}}/commit/{{.GitInfo.Hash}}">{{.GitInfo.AbbreviatedHash}}</a>
+			<span>{{.GitInfo.Subject}}</span>
+		</footer>
+		{{ end }}
+	</body>
+</html>

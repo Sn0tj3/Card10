@@ -1,0 +1,8 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "[card10] logix"
+
+enableGitInfo = true
+
+[params]
+wiki_url = "https://chaos.expert/genofire/logix"

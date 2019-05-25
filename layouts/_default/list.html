@@ -1,0 +1,37 @@
+{{ partial "default_header.html" . }}
+<aside class="p-aside">
+	{{if not .Page.IsHome }}
+	<div class="p-aside__section">
+		<h4 class="p-aside__header">{{.Title}}</h4>
+		<nav class="p-aside__nav">
+			<ul class="p-list">
+				{{range .Page.Pages}}
+				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
+				{{end}}
+			</ul>
+		</nav>
+	</div>
+	{{end}}
+	{{range .Sections}}
+	<div class="p-aside__section">
+		<h4 class="p-aside__header"><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></h4>
+		<nav class="p-aside__nav">
+			<ul class="p-list">
+				{{range .Sections}}
+				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
+				{{end}}
+				{{range .Pages}}
+				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
+				{{end}}
+			</ul>
+		</nav>
+	</div>
+	{{end}}
+</aside>
+<div class="p-content">
+        <div class="row">
+		<h1 class="p-heading--one">{{.Title}}</h1>
+		{{.Content}}
+	</div>
+</div>
+{{ partial "default_footer.html" . }}

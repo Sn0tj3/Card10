@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{.Site.Title}}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/own.css" />
+	</head>
+	<body>
+		<div id="app">
+			<header id="navigation" class="p-navigation">
+				<div class="p-navigation__logo">
+					<a class="p-navigation__link" href="/">Card10</a>
+				</div>
+				<div class="p-navigation__banner">
+					<a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+					<a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+				</div>
+				<nav class="p-navigation__nav" role="menubar">
+					<span class="u-off-screen">
+						<a href="#main-content">Jump to main content</a>
+					</span>
+					<ul class="p-navigation__links" role="menu">
+						{{ range .Site.Sections }}
+						{{ range .Pages }}
+						<li class="p-navigation__link"><a href="{{ .Permalink }}">{{.Title}}</a></li>
+						{{ end }}
+						{{ range .Sections }}
+						<li class="p-navigation__link"><a href="{{ .Permalink }}">{{.Title}}</a></li>
+						{{ end }}
+						{{ end }}
+					</ul>
+					<ul class="p-navigation__links u-float-right" role="menu">
+						<li class="p-navigation__link"><a target="_blank" href="{{.Site.Params.Wiki_URL}}/edit/site/content/{{$.File.Path}}">Edit</a></li>
+					</ul>
+				</nav>
+			</header>
+			<ul  class="p-breadcrumbs">
+				{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+			</ul>
+			{{ define "breadcrumbnav" }}
+				{{ if .p1.Parent }}
+					{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+				{{ else if not .p1.IsHome }}
+					{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+				{{ end }}
+				<li class="p-breadcrumbs__item{{ if eq .p1 .p2 }} active{{ end }}">
+					<a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+				</li>
+			{{ end }}
