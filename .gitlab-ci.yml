@@ -1,11 +1,8 @@
 image: monachus/hugo
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
 pages:
   script:
-  - git submodule update --init
+  - git submodule update --init --remote
   - hugo
   artifacts:
     paths:
