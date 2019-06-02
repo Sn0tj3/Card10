@@ -6,7 +6,7 @@ variables:
 pages:
   script:
   - git submodule sync --recursive
-  - git submodule update --init --recursive
+  - git submodule update --init --recursive --remote --merge
   - hugo
   artifacts:
     paths:
