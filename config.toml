@@ -5,5 +5,5 @@ title = "[card10] logix"
 enableGitInfo = true
 
 [params]
-wiki_url = "https://git.card10.badge.events.ccc.de/open/logix"
+wiki_url = "https://git.card10.badge.events.ccc.de/card10/logix"
 wiki_branch = "master"
