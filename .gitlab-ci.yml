@@ -6,14 +6,12 @@ variables:
 
 pages:
   script:
+  - git status
   - git submodule foreach git pull origin master
-  - find || true
   - pushd content
-  - ls -larht
   - git status
   - popd
-  - hugo -v --debug
-  - find || true
+  - hugo
   artifacts:
     paths:
     - public
