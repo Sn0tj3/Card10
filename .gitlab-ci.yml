@@ -3,7 +3,13 @@ image: monachus/hugo
 pages:
   script:
   - git submodule foreach git pull origin master
+  - find || true
+  - pushd content
+  - ls -larht
+  - git status
+  - popd
   - hugo -v --debug
+  - find || true
   artifacts:
     paths:
     - public
