@@ -1,5 +1,9 @@
 image: monachus/hugo
 
+
+variables:
+  -  GIT_SUBMODULE_STRATEGY: recursive
+
 pages:
   script:
   - git submodule foreach git pull origin master
