@@ -3,7 +3,7 @@ image: monachus/hugo
 pages:
   script:
   - git submodule foreach git pull origin master
-  - hugo
+  - hugo -v
   artifacts:
     paths:
     - public
