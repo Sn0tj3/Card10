@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "[card10] logix"
+title = "card10"
 
 enableGitInfo = true
 
