@@ -11,6 +11,7 @@ pages:
   - pushd content
   - git status
   - popd
+  - mv ./favicons/* ./content
   - hugo
   artifacts:
     paths:
