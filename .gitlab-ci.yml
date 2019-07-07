@@ -1,21 +1,42 @@
-image: monachus/hugo
+stages:
+   - check
+   - pages
 
-
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+build-pages:
+  stage: check
+  image:
+    name: alpine/git
+    entrypoint: [""]
+  variables:
+    GIT_STRATEGY: none
+    GIT_URL: https://git.card10.badge.events.ccc.de/card10/logix
+  artifacts:
+   paths:
+    - hash
+   name: latest
+  script:
+   - git ls-remote "${GIT_URL}" | awk '{ if( $2 == "refs/heads/master" ) { print $1; exit }}' | tee new_hash
+   - if [ "$(cat new_hash)" == "$(cat hash)" ]; then echo "No need for update"; exit 1; fi
+   - cp -f new_hash hash
+   - echo "Regenerate pages"
 
 pages:
+  stage: pages
+  image: monachus/hugo
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
-  - git status
-  - git submodule foreach git pull origin master
-  - pushd content
-  - git status
-  - popd
-  - mv ./favicons/* ./content
-  - hugo
+   - git status
+   - git submodule foreach git pull origin master
+   - pushd content
+   - git status
+   - popd
+   - mv ./favicons/* ./content
+   - hugo
   artifacts:
     paths:
     - public
     expire_in: 2h
+  when: on_success
   only:
   - master
