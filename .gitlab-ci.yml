@@ -13,17 +13,24 @@ check if build required:
   artifacts:
    paths:
     - hash
+   when: always
    name: latest
   only:
    variables:
     - $TRIGGER == "automatic"
   script:
-   - git ls-remote "${GIT_URL}" | awk '{ if( $2 == "refs/heads/master" ) { print $1; exit }}' | tee new_hash
-   - if [ "$(cat new_hash)" == "$(cat hash)" ]; then echo "No need for update"; exit 1; fi
-   - cp -f new_hash hash
-   - echo "Regenerate pages"
+   - |+
+      git ls-remote "${GIT_URL}" | \
+         awk '{ if( $2 == "refs/heads/master" ) { print $1; exit }}' | tee new_hash
+      if [ "$(cat new_hash)" != "$(cat hash)" ]; then
+         echo "Regenerate pages"
+         cp -f new_hash hash
+         exit 1
+      else
+         echo "No need to update pages"
+      fi
 
-pages:
+.pages: &pages
   stage: pages
   image: monachus/hugo
   variables:
@@ -40,6 +47,16 @@ pages:
     paths:
     - public
     expire_in: 2h
-  when: on_success
   only:
   - master
+
+pages:
+   <<: *pages
+   except:
+      variables:
+       - $TRIGGER == "automatic"
+
+pages:
+   <<: *pages
+   when: on_failure
+
