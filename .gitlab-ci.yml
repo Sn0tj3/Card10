@@ -17,7 +17,6 @@ check if build required:
   only:
    variables:
     - $TRIGGER == "automatic"
-  allow_failure: true
   script:
    - git ls-remote "${GIT_URL}" | awk '{ if( $2 == "refs/heads/master" ) { print $1; exit }}' | tee new_hash
    - if [ "$(cat new_hash)" == "$(cat hash)" ]; then echo "No need for update"; exit 1; fi
