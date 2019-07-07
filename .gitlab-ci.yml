@@ -2,7 +2,7 @@ stages:
    - check
    - pages
 
-build-pages:
+check if build required:
   stage: check
   image:
     name: alpine/git
