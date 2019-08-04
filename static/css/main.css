@@ -5717,8 +5717,7 @@ html {
 
 .p-navigation::after,
 .p-navigation__link > a::before {
-  height: 0px;
-  background: transparent;
+  content: none;
 }
 
 #navigation > .logo {
