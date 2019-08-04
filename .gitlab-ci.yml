@@ -1,17 +1,11 @@
 .pages: &pages
-  image:
-    name: klakegg/hugo:ext-nodejs
-    entrypoint: [""]
+  image: monachus/hugo
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   script:
      - git status
-     - git submodule foreach git pull origin master
-     - pushd content
-     - git status
-     - popd
-     - yarn add sass
-     - ./node_modules/.bin/sass style/main.scss static/css/main.css
+     - rm -rf content
+     - git clone https://git.card10.badge.events.ccc.de/card10/logix.git content
      - hugo
   artifacts:
     paths:
