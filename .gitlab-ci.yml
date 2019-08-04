@@ -1,5 +1,7 @@
 .pages: &pages
-  image: monachus/hugo
+  image:
+    name: klakegg/hugo:ext-nodejs
+    entrypoint: [""]
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   script:
