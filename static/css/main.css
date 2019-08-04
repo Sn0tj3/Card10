@@ -5698,7 +5698,7 @@ html {
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.02);
   background-color: #ffffff;
   padding: 1em 2em 3em;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 .p-aside__section {
@@ -5707,7 +5707,7 @@ html {
   border-width: 1px 1px 0.2em;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.02);
   padding: 1.5em 1.5em 0;
-  margin-bottom: 1em;
+  margin: 0 1em 1em;
 }
 
 .p-aside__header {
