@@ -1,7 +1,13 @@
+// Download font from local only
+$font-import: '/fonts';
+$assets-path: '/assets';
+
+@import "vanillaframework/scss/vanilla";
+@include vanilla;
+
 body {
 	background-color: #f3f3f3;
 }
-
 #app {
 	display: flex;
 	flex-flow: row wrap;

@@ -1,3 +1,6 @@
 [submodule "content"]
 	path = content
 	url = https://git.card10.badge.events.ccc.de/card10/logix.git
+[submodule "style/vanillaframework"]
+	path = style/vanillaframework
+	url = git@github.com:vanilla-framework/vanilla-framework.git
