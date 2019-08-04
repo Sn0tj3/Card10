@@ -25,6 +25,7 @@ html {
 	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.02);
 	background-color: #ffffff;
 	padding: 1em 2em 3em;
+	margin-left: 10px;
 }
 .p-aside__section {
 	background: #fcfcfc;
@@ -40,12 +41,13 @@ html {
 }
 .p-navigation::after {
 	bottom: 0px;
-	height: 5px;
-	background: #ffc600;
+	height: 0px;
+	background: transparent;
 }
 #navigation > .logo {
 	border-bottom: 6px solid #0076ba;
 	z-index: 2;
+	width: 30%;
 	padding: 0px 50px;
 	font-size: 1.5rem;
 	line-height: 3rem;
@@ -56,17 +58,20 @@ html {
 #navigation .edit > a {
 	color: #99ba00;
 }
-#navigation .p-navigation__links {
-	width: 33%;
+#navigation .p-navigation__nav >.p-navigation__links {
+	border-bottom: 6px solid #ffc600;
+	width: 50%;
 }
 #navigation .p-navigation__links.u-float-right {
 	border-bottom: 6px solid #99ba00;
-	z-index: 2;
 	flex-direction: row-reverse;
 }
 
 @media (max-width: 800px) {
 	#app {
 		flex-direction: column;
+	}
+	#app > .p-content  {
+		margin: 0px;
 	}
 }
