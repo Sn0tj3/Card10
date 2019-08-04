@@ -5674,7 +5674,7 @@ form .p-list--divided .p-list__item label {
     display: none !important;
   }
 }
-body {
+html {
   background-color: #f3f3f3;
 }
 

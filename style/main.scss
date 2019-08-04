@@ -5,7 +5,7 @@ $assets-path: '/assets';
 @import "vanillaframework/scss/vanilla";
 @include vanilla;
 
-body {
+html {
 	background-color: #f3f3f3;
 }
 #app {
