@@ -4,8 +4,8 @@
     GIT_SUBMODULE_STRATEGY: recursive
   script:
      - git status
-     - git submodule foreach git pull origin master
      - pushd content
+     - git pull origin master
      - git status
      - popd
      - hugo
