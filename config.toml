@@ -7,3 +7,8 @@ enableGitInfo = true
 [params]
 wiki_url = "https://git.card10.badge.events.ccc.de/card10/logix"
 wiki_branch = "master"
+
+[[menus.upper]]
+  name = "Firmware"
+  url = "https://firmware.card10.badge.events.ccc.de"
+  weight = 10

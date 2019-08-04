@@ -38,7 +38,9 @@
 						<a href="#main-content">Jump to main content</a>
 					</span>
 					<ul class="p-navigation__links" role="menu">
-						<li class="p-navigation__link"><a target="_blank" href="https://firmware.card10.badge.events.ccc.de/">Firmware API</a></li>
+						{{ range site.Menus.upper }}
+						<li class="p-navigation__link"><a{{ if eq "http" (slicestr .URL 0 4) }} target="_blank"{{ end }} href="{{.URL}}">{{.Name}}</a></li>
+						{{ end }}
 					</ul>
 					<ul class="p-navigation__links u-float-right" role="menu">
 						<li class="p-navigation__link edit"><a target="_blank" href="{{.Site.Params.Wiki_URL}}/edit/{{.Site.Params.Wiki_Branch}}/{{$.File.Path}}">Edit</a></li>
