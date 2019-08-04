@@ -816,43 +816,43 @@ html {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 300;
-  src: url("/assetse8c07df6-Ubuntu-L_W.woff2") format("woff2"), url("/assets8619add2-Ubuntu-L_W.woff") format("woff");
+  src: url("/assets/e8c07df6-Ubuntu-L_W.woff2") format("woff2"), url("/assets/8619add2-Ubuntu-L_W.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
-  src: url("/assetsfff37993-Ubuntu-R_W.woff2") format("woff2"), url("/assets7af50859-Ubuntu-R_W.woff") format("woff");
+  src: url("/assets/fff37993-Ubuntu-R_W.woff2") format("woff2"), url("/assets/7af50859-Ubuntu-R_W.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 300;
-  src: url("/assetsf8097dea-Ubuntu-LI_W.woff2") format("woff2"), url("/assets8be89d02-Ubuntu-LI_W.woff") format("woff");
+  src: url("/assets/f8097dea-Ubuntu-LI_W.woff2") format("woff2"), url("/assets/8be89d02-Ubuntu-LI_W.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: italic;
   font-weight: 400;
-  src: url("/assetsfca66073-ubuntu-ri-webfont.woff2") format("woff2"), url("/assetsf0898c72-ubuntu-ri-webfont.woff") format("woff");
+  src: url("/assets/fca66073-ubuntu-ri-webfont.woff2") format("woff2"), url("/assets/f0898c72-ubuntu-ri-webfont.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 100;
-  src: url("/assets7f100985-Ubuntu-Th_W.woff2") format("woff2"), url("/assets502cc3a1-Ubuntu-Th_W.woff") format("woff");
+  src: url("/assets/7f100985-Ubuntu-Th_W.woff2") format("woff2"), url("/assets/502cc3a1-Ubuntu-Th_W.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu Mono";
   font-style: normal;
   font-weight: 300;
-  src: url("/assetsfdd692b9-UbuntuMono-R_W.woff2") format("woff2"), url("/assets85edb898-UbuntuMono-R_W.woff") format("woff");
+  src: url("/assets/fdd692b9-UbuntuMono-R_W.woff2") format("woff2"), url("/assets/85edb898-UbuntuMono-R_W.woff") format("woff");
 }
 @font-face {
   font-family: "Ubuntu Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("/assetsfdd692b9-UbuntuMono-R_W.woff2") format("woff2"), url("/assets85edb898-UbuntuMono-R_W.woff") format("woff");
+  src: url("/assets/fdd692b9-UbuntuMono-R_W.woff2") format("woff2"), url("/assets/85edb898-UbuntuMono-R_W.woff") format("woff");
 }
 .p-media-object--large .p-media-object__title, .p-heading--one, h1 {
   max-width: 20em;
@@ -2756,7 +2756,7 @@ th {
 }
 .is-error :not(select).p-form-validation__input,
 .is-error .p-form-validation__select-wrapper::after {
-  background-image: url("/assets4b0cd7fc-icon-error.svg");
+  background-image: url("/assets/4b0cd7fc-icon-error.svg");
 }
 
 .is-success .p-form-validation__input {
@@ -2764,7 +2764,7 @@ th {
 }
 .is-success :not(select).p-form-validation__input,
 .is-success .p-form-validation__select-wrapper::after {
-  background-image: url("/assets94949185-icon-success.svg");
+  background-image: url("/assets/94949185-icon-success.svg");
 }
 
 .is-caution .p-form-validation__input {

@@ -1,6 +1,6 @@
 // Download font from local only
-$font-import: '/fonts';
-$assets-path: '/assets';
+$font-import: '/fonts/';
+$assets-path: '/assets/';
 
 @import "vanillaframework/scss/vanilla";
 @include vanilla;
