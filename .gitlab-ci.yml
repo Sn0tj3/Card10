@@ -11,7 +11,8 @@ pages:
   - pushd content
   - git status
   - popd
-  - mv ./favicons/* ./content
+  - yarn add sass
+  - ./node_modules/.bin/sass style/main.scss static/css/main.css
   - hugo
   artifacts:
     paths:
