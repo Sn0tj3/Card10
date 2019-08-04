@@ -38,14 +38,6 @@
 						<a href="#main-content">Jump to main content</a>
 					</span>
 					<ul class="p-navigation__links" role="menu">
-						{{ range .Site.Sections }}
-						{{ range .Pages }}
-						<li class="p-navigation__link"><a href="{{ .Permalink }}">{{.Title}}</a></li>
-						{{ end }}
-						{{ range .Sections }}
-						<li class="p-navigation__link"><a href="{{ .Permalink }}">{{.Title}}</a></li>
-						{{ end }}
-						{{ end }}
 					</ul>
 					<ul class="p-navigation__links u-float-right" role="menu">
 						<li class="p-navigation__link edit"><a target="_blank" href="{{.Site.Params.Wiki_URL}}/edit/{{.Site.Params.Wiki_Branch}}/{{$.File.Path}}">Edit</a></li>

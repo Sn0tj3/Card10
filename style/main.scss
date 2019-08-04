@@ -56,9 +56,13 @@ body {
 #navigation .edit > a {
 	color: #99ba00;
 }
+#navigation .p-navigation__links {
+	width: 33%;
+}
 #navigation .p-navigation__links.u-float-right {
 	border-bottom: 6px solid #99ba00;
 	z-index: 2;
+	flex-direction: row-reverse;
 }
 
 @media (max-width: 800px) {
