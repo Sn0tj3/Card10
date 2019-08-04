@@ -1,22 +1,31 @@
-image: monachus/hugo
-
-
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
-pages:
+.pages: &pages
+  image: monachus/hugo
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
-  - git status
-  - git submodule foreach git pull origin master
-  - pushd content
-  - git status
-  - popd
-  - yarn add sass
-  - ./node_modules/.bin/sass style/main.scss static/css/main.css
-  - hugo
+     - git status
+     - git submodule foreach git pull origin master
+     - pushd content
+     - git status
+     - popd
+     - yarn add sass
+     - ./node_modules/.bin/sass style/main.scss static/css/main.css
+     - hugo
   artifacts:
     paths:
-    - public
+      - public
     expire_in: 10m
+
+
+test pages:
+  <<: *pages
+  except:
+   - master
+
+
+# Seperated otherwise merge requests would 
+# replace the real site
+pages:
+  <<: *pages
   only:
-  - master
+   - master
