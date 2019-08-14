@@ -1,11 +1,13 @@
 {{ partial "default_header.html" . }}
 <aside class="p-aside">
+	{{if not .Page.IsHome }}
 	<div class="p-aside__section">
 		<h4 class="p-aside__header">{{.Title}}</h4>
 		<nav class="p-aside__nav">
 			<ul class="p-list">
 				{{range .Page.Pages}}
 				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
+				{{end}}
 			</ul>
 		</nav>
 	</div>
