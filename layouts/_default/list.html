@@ -30,6 +30,11 @@
 </aside>
 <div class="p-content">
 	<h1 class="p-heading--one">{{.Title}}</h1>
-	{{.Content}}
+	{{if not .Draft }}
+		{{.Content}}
+	{{else}}
+		This document is in progress, and could not be rendered yet.
+		<a href="https://github.com/gohugoio/hugo/issues/6215">Track hugo bug of this if</a>
+	{{end}}
 </div>
 {{ partial "default_footer.html" . }}

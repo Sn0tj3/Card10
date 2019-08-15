@@ -1,5 +1,5 @@
 .pages: &pages
-  image: monachus/hugo:v0.56.3
+  image: monachus/hugo
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   script:
