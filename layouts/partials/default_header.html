@@ -43,7 +43,13 @@
 						{{ end }}
 					</ul>
 					<ul class="p-navigation__links u-float-right" role="menu">
-						<li class="p-navigation__link edit"><a target="_blank" href="{{.Site.Params.Wiki_URL}}/edit/{{.Site.Params.Wiki_Branch}}/{{$.File.Path}}">Edit</a></li>
+						<li class="p-navigation__link edit">
+							{{ with $.File }}
+							<a target="_blank" href="{{$.Site.Params.Wiki_URL}}/edit/{{$.Site.Params.Wiki_Branch}}/{{.Path}}">Edit</a>
+							{{ else }}
+							not source found
+							{{ end }}
+						</li>
 					</ul>
 				</nav>
 			</header>
