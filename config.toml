@@ -8,7 +8,13 @@ enableGitInfo = true
 wiki_url = "https://git.card10.badge.events.ccc.de/card10/logix"
 wiki_branch = "master"
 
+
 [[menus.upper]]
   name = "Firmware"
   url = "https://firmware.card10.badge.events.ccc.de"
   weight = 10
+
+[[menus.upper]]
+  name = "Gitlab"
+  url = "https://git.card10.badge.events.ccc.de/card10"
+  weight = 20
