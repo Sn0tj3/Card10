@@ -15,6 +15,6 @@ wiki_branch = "master"
   weight = 10
 
 [[menus.upper]]
-  name = "Gitlab"
+  name = "GitLab"
   url = "https://git.card10.badge.events.ccc.de/card10"
   weight = 20
