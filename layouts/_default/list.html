@@ -20,6 +20,11 @@
 				{{range .Sections}}
 				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
 				{{end}}
+
+				{{if and (ne (len .Sections) 0) (ne (len .Pages) 0) }}
+				<li class="divider"></li>
+				{{end}}
+
 				{{range .Pages}}
 				<li><a class="p-aside__link" href="{{.Permalink}}">{{.Title}}</a></li>
 				{{end}}

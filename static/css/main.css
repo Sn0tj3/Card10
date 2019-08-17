@@ -5721,6 +5721,10 @@ html {
   border-bottom: solid 2px #cccccc;
 }
 
+.divider {
+  border-bottom: solid 2px #cccccc;
+}
+
 .p-navigation::after,
 .p-navigation__link > a::before {
   content: none;
