@@ -2,16 +2,16 @@
 <div class="p-content">
 	<h1 class="p-heading--one">404 - NotFound</h1>
 	<div class="p-notification--caution">
-		<p class="p-notification__response">
+		<div class="p-notification__response">
 			To generate a new page here, please follow <a href="#" target="_blank" id="filenameHREF">here</a> link and create a file called,
-			<ul>
+			<ul style="margin-bottom: 0">
 				<li><code id="filename"></code> for a single page</li>
 			</ul>
 			or
 			<ul>
 				<li><code id="filenameWithFolder"></code>for a page with subpages</li>
 			</ul>
-		</p>
+		</div>
 	</div> 
 	<script>
 		var path = window.location.pathname;
@@ -22,7 +22,6 @@
 		document.getElementById("filename").textContent = path + ".md";
 		document.getElementById("filenameWithFolder").textContent = path + "/_index.md";	
 		document.getElementById("filenameHREF").href = "{{$.Site.Params.Wiki_URL}}/new/{{$.Site.Params.Wiki_Branch}}/" + path + ".md";
-		
 	</script>
 </div>
 {{ partial "default_footer.html" . }}
