@@ -3,7 +3,7 @@
 	<h1 class="p-heading--one">404 - NotFound</h1>
 	<div class="p-notification">
 		<p class="p-notification__response">
-			To generate a new page <a href="#" click="createPage()">here</a>,
+			To generate a new page <a href="#" id="filenameHREF">here</a>,
 			if you want to have subpages later please use the filename <code id="filenameWithFolder"></code>
 			else create the file: <code id="filename"></code>.
 		</p>
@@ -15,13 +15,8 @@
 		}
 		
 		document.getElementById("filename").textContent = path + ".md";
-		document.getElementById("filenameWithFolder").textContent = path + "/_index.md";
-		
-		path = "https://git.card10.badge.events.ccc.de/card10/logix/new/master/" + path + ".md";
-		
-		function createPage() {
-			window.location = path;		
-		}
+		document.getElementById("filenameWithFolder").textContent = path + "/_index.md";	
+		document.getElementById("filenameHREF").href = "https://git.card10.badge.events.ccc.de/card10/logix/new/master/" + path + ".md";
 		
 	</script>
 </div>
