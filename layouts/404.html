@@ -1,0 +1,24 @@
+{{ partial "default_header.html" . }}
+<div class="p-content">
+	<h1 class="p-heading--one">404 - NotFound</h1>
+	We like to get offer information:
+	<a href="#" on-click="createPage()">New Page</a><br/>
+	And give the file the name <pre id="filename"></pre> or <pre id="filenameWithFolder"></pre> if you like to create subpages.
+	<script>
+		var path = window.location.pathname;
+		if( path.slice(-1) == "/" ) {
+			path = path.substring(0, path.length - 1);
+		}
+		
+		document.getElementById("filename").textContent = path + ".md";
+		document.getElementById("filenameWithFolder").textContent = path + "/_index.md";
+		
+		path = "https://git.card10.badge.events.ccc.de/card10/logix/new/master/" + path + ".md";
+		
+		function createPage() {
+		
+		}
+		
+	</script>
+</div>
+{{ partial "default_footer.html" . }}
