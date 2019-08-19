@@ -2240,8 +2240,9 @@ th {
 
 .p-breadcrumbs {
   list-style: none;
-  margin: 0.5em 0 -0.25em 1em;
+  margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .p-breadcrumbs__item {
@@ -5686,7 +5687,6 @@ html {
 #app {
   display: flex;
   flex-flow: row wrap;
-  max-width: 100vw;
 }
 
 #app > * {
@@ -5757,7 +5757,26 @@ html {
   flex-direction: row-reverse;
 }
 
+.mobile {
+  display: none;
+}
+
 @media (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+
+  #app > aside > #tree,
+#app > aside > :target ~ #no-tree {
+    display: none;
+  }
+
+  #app > aside > #no-tree,
+#app > aside > #tree:target,
+#app > aside > #no-tree:target {
+    display: block;
+  }
+
   #app {
     flex-direction: column;
   }

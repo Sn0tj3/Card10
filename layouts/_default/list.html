@@ -1,5 +1,12 @@
 {{ partial "default_header.html" . }}
 <aside class="p-aside">
+	<div id="tree">
+	<div class="mobile">
+		<a href="#no-tree" class="p-button has-icon">
+			<i class="p-icon--plus"></i>
+			<span>Hide Tree</span>
+		</a>
+	</div>
 	{{if not .Page.IsHome }}
 	<div class="p-aside__section">
 		<h4 class="p-aside__header">{{.Title}}</h4>
@@ -38,6 +45,13 @@
 	</div>
 	{{end}}
 	{{end}}
+	</div>
+	<div id="no-tree" class="mobile">
+		<a href="#tree" class="p-button has-icon">
+			<i class="p-icon--plus"></i>
+			<span>Show Tree</span>
+		</a>
+	</div>
 </aside>
 <div class="p-content">
 	<h1 class="p-heading--one">{{.Title}}</h1>

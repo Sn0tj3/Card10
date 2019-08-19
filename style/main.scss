@@ -69,7 +69,24 @@ html {
 	flex-direction: row-reverse;
 }
 
+.mobile {
+	display: none;
+}
+
+
 @media (max-width: 800px) {
+	.mobile {
+		display: block;
+	}
+	#app > aside > #tree,
+	#app > aside > :target ~ #no-tree {
+		display: none;
+	}
+	#app > aside > #no-tree,
+	#app > aside > #tree:target,
+	#app > aside > #no-tree:target {
+		display: block;
+	}
 	#app {
 		flex-direction: column;
 	}
