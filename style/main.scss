@@ -11,6 +11,7 @@ html {
 #app {
 	display: flex;
 	flex-flow: row wrap;
+	max-width: 100vw;
 }
 #app > * {
 	flex: 1 100%;
@@ -93,4 +94,11 @@ html {
 	#app > .p-content  {
 		margin: 0px;
 	}
+}
+
+.p-breadcrumbs {
+  margin: 0.5em 0 -0.25em 1em;
+}
+th {
+	width: auto !important;
 }
